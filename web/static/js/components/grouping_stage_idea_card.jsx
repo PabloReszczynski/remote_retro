@@ -15,8 +15,15 @@ export class GroupingStageIdeaCard extends Component {
       connectDragSource,
     } = this.props
 
+    let style
+    if (idea.x) {
+      style = { ...touchEventDragPreviewStyles, position: "fixed", left: idea.x, top: idea.y }
+    } else {
+      style = touchEventDragPreviewStyles
+    }
+
     return connectDragSource(
-      <div className={styles.wrapper} style={touchEventDragPreviewStyles}>
+      <div className={styles.wrapper} style={style}>
         <p>{idea.body}</p>
       </div>
     )

@@ -39,8 +39,9 @@ export const dropTargetSpec = {
     const { draggedIdea } = monitor.getItem()
     const { actions } = props
 
-    const { x, y } = monitor.getClientOffset()
-    actions.submitIdeaEditAsync({ ...draggedIdea, x, y })
+    const { x, y } = monitor.getSourceClientOffset()
+
+    actions.ideaDroppedInNewLocation({ ...draggedIdea, x: x + 1, y })
   },
 }
 
