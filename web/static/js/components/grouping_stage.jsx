@@ -9,9 +9,8 @@ import styles from "./css_modules/idea_generation_stage.css"
 
 // specification for rendering a drag preview on touch devices
 // https://github.com/LouisBrunner/dnd-multi-backend/tree/master/packages/react-dnd-multi-backend#preview
-const generateTouchEventDragPreview = (type, item, defaultDraggingStyles) => {
-  const style = { ...defaultDraggingStyles, backgroundColor: "orange" }
-  return <div style={style}>Drag Preview</div>
+const generateTouchEventDragPreview = (type, item, styles) => {
+  return <GroupingStageIdeaCard touchEventDragPreviewStyles={styles} idea={item.draggedIdea} />
 }
 
 const GroupingStage = props => {
