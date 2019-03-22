@@ -2,11 +2,13 @@ import React, { Component } from "react"
 import MultiBackend from "react-dnd-multi-backend"
 import HTML5toTouch from "react-dnd-multi-backend/lib/HTML5toTouch"
 import { DragDropContext } from "react-dnd"
+import MetaTags from "react-meta-tags"
 import PropTypes from "prop-types"
 
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
 import { actions, selectors } from "../redux"
+import stages from "../configs/stages"
 
 import * as AppPropTypes from "../prop_types"
 
@@ -43,8 +45,13 @@ export class RemoteRetro extends Component {
       actions,
     } = this.props
 
+    const viewportMetaContent = stage === stages.GROUPING && !alert ? "width=1440" : "width=device-width, initial-scale=1"
+
     return (
       <div className={stage}>
+        <MetaTags>
+          <meta name="viewport" content={viewportMetaContent} />
+        </MetaTags>
         <Room
           currentUser={currentUser}
           facilitatorName={facilitatorName}
