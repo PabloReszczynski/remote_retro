@@ -136,6 +136,21 @@
   }
 }
 
+@keyframes deviceRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(0deg);
+  }
+  45% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
 @keyframes FadeIn {
   0% {
     opacity: 0;
@@ -156,6 +171,13 @@
       opacity: 0;
     }
   }
+}
+
+:global(.grouping .mobile.alternate.icon) {
+  animation: deviceRotate 4s infinite;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+  animation-delay: 2s;
 }
 
 :global .grouping .ui.dimmer {

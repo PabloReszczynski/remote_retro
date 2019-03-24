@@ -5,6 +5,7 @@ import LowerThird from "./lower_third"
 import GroupingBoard from "./grouping_board"
 
 import * as AppPropTypes from "../prop_types"
+
 import styles from "./css_modules/idea_generation_stage.css"
 
 const PORTRAIT = "portrait"
@@ -20,9 +21,10 @@ const GroupingStage = props => {
       {browser.orientation === PORTRAIT && (
         <div className="ui dimmer visible transition visible active">
           <div className="content">
-            <h3 className="ui inverted header">
+            <h3 className="ui inverted icon header">
               You're in portrait mode.
               <p className="sub header">This stage requires landscape; rotate your device!</p>
+              <i className="mobile alternate icon" />
             </h3>
           </div>
         </div>
