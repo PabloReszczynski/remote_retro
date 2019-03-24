@@ -7,6 +7,10 @@
   border: 1px solid var(--semantic-dark-grey);
   border-radius: 3px;
 
+  :global(p) {
+    user-select: none;
+  }
+
   color: var(--semantic-dark-grey);
   background-color: white;
 }
