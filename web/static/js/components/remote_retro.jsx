@@ -59,6 +59,7 @@ export class RemoteRetro extends Component {
           ideas={ideas}
           stage={stage}
           actions={actions}
+          browser={browser}
           retroChannel={retroChannel}
           isTabletOrAbove={isTabletOrAbove}
         />
