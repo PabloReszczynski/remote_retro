@@ -17,7 +17,13 @@ export class GroupingStageIdeaCard extends Component {
 
     let style
     if (idea.x) {
-      style = { ...touchEventDragPreviewStyles, position: "fixed", left: idea.x, top: idea.y }
+      style = {
+        ...touchEventDragPreviewStyles,
+        position: "fixed",
+        top: 0,
+        left: 0,
+        transform: `translate(${idea.x}px,${idea.y}px)`,
+      }
     } else {
       style = touchEventDragPreviewStyles
     }
